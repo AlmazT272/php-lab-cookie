@@ -13,6 +13,8 @@ if (isset($_COOKIE['lastVisit'])) {
     $lastVisit = date("d-m-Y H:i:s", (int)$_COOKIE['lastVisit']);
 }
 
-setcookie("visitCounter", $visitCounter, 0x7FFFFFFF);
-setcookie("lastVisit", time(), 0x7FFFFFFF);
+if (!isset($_COOKIE['lastVisit']) || date('d-m-Y', (int)$_COOKIE['lastVisit']) != date('d-m-Y')) {
+    setcookie("visitCounter", $visitCounter, 0x7FFFFFFF);
+    setcookie("lastVisit", time(), 0x7FFFFFFF);
+}
 ?>
