@@ -1,13 +1,18 @@
 <?php
 include 'inc/cookie.inc.php';
 
+// Имя файла журнала
+define('PATH_LOG', 'path.log');
+include 'inc/log.inc.php';
+
 // Мәзір пункттері сақталған массив
 $leftMenu = [
     ['link' => 'Домой', 'href' => 'index.php'],
     ['link' => 'О нас', 'href' => 'about.php'],
     ['link' => 'Контакты', 'href' => 'contact.php'],
     ['link' => 'Таблица умножения', 'href' => 'table.php'],
-    ['link' => 'Калькулятор', 'href' => 'calc.php']
+    ['link' => 'Калькулятор', 'href' => 'calc.php'],
+    ['link' => 'Журнал посещений', 'href' => 'index.php?id=log']
 ];
 
 // Мәзірді салатын функция
